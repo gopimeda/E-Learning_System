@@ -1,0 +1,85 @@
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.spinner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  color: #2563eb;
+}
+
+.spinner-small {
+  width: 20px;
+  height: 20px;
+}
+
+.spinner-medium {
+  width: 32px;
+  height: 32px;
+}
+
+.spinner-large {
+  width: 48px;
+  height: 48px;
+}
+
+.spinner-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Full page loading */
+.loading-spinner.full-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  min-height: 100vh;
+}
+
+/* Inline loading */
+.loading-spinner.inline {
+  min-height: auto;
+  padding: 1rem;
+}
+
+/* Small inline loading */
+.loading-spinner.inline-small {
+  min-height: auto;
+  padding: 0.5rem;
+}
+
+.loading-spinner.inline-small .spinner-content {
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.loading-spinner.inline-small .spinner-text {
+  font-size: 0.75rem;
+}
